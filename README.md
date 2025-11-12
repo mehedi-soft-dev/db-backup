@@ -6,7 +6,7 @@ A PowerShell-based tool for backing up and restoring SQL Server databases using 
 
 - **Windows OS** with PowerShell
 - **SQL Server** (Production and/or Development)
-- **SqlPackage.exe** (included in `scripts/dirver/DAC/bin/` or install [Microsoft SQL Server Data-Tier Application Framework](https://aka.ms/dacfx))
+- **SqlPackage.exe** (included in `scripts/dirver/DAC/bin/`
 - **sqlcmd** utility (comes with SQL Server)
 - **SQL Server credentials** with appropriate permissions (CREATE DATABASE, READ/WRITE access)
 
