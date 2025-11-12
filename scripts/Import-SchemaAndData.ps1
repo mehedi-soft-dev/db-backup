@@ -5,8 +5,8 @@
 # ===================================================================
 # HARDCODED FOR DEBUGGING - START
 # ===================================================================
-$PROD_DATABASE="nextXdb"
-$DEV_DATABASE="nextXdb_dev"
+# $PROD_DATABASE="nextXdb"  # Commented out - using .env value instead
+# $DEV_DATABASE="nextXdb_dev"  # Commented out - using .env value instead
 # ===================================================================
 # HARDCODED FOR DEBUGGING - END
 # ===================================================================
@@ -28,11 +28,12 @@ foreach ($line in $envVars) {
 $global:LogDatabaseName = $DEV_DATABASE
 
 # ---------- Path and Configuration Setup ----------
-$prodBackupFolder = Join-Path -Path $BACKUP_FOLDER -ChildPath $PROD_DATABASE
+$prodBackupFolder = (Resolve-Path (Join-Path -Path $BACKUP_FOLDER -ChildPath $PROD_DATABASE)).Path
 $devBackupFolder = Join-Path -Path $BACKUP_FOLDER -ChildPath $DEV_DATABASE
 if (-not (Test-Path -Path $devBackupFolder -PathType Container)) {
     New-Item -ItemType Directory -Path $devBackupFolder -Force | Out-Null
 }
+$devBackupFolder = (Resolve-Path $devBackupFolder).Path
 
 $maskingConfigFile = Find-ConfigFile -fileName "$($PROD_DATABASE)_config.json"
 if (-not $maskingConfigFile) {

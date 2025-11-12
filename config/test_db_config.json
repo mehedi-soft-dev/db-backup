@@ -1,5 +1,5 @@
 {
-    "tablesToExcludeData": [],
+    "tablesToExcludeData": ["Table1", "Table2"],
     "SkipDataImport": false,
     "SkipDataMasking": true,
     "tables": [
