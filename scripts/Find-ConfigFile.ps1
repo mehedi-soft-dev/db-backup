@@ -23,13 +23,17 @@ function Find-ConfigFile {
     # Search upward for config folder
     $rootDir = (Get-Location).Drive.Name + "\"
     $path = $currentDir
-    while ($path -ne $rootDir) {
+    while ($path -and $path -ne $rootDir) {
         $configDir = Join-Path -Path $path -ChildPath "config"
         $filePath = Join-Path -Path $configDir -ChildPath $fileName
         if (Test-Path $filePath) {
             return $filePath
         }
-        $path = Split-Path -Path $path
+        $path = Split-Path -Path $path -Parent
+        # Prevent infinite loop if Split-Path returns empty or same path
+        if ([string]::IsNullOrWhiteSpace($path)) {
+            break
+        }
     }
 
     return $null
