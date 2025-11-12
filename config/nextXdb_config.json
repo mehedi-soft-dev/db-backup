@@ -1,0 +1,73 @@
+{
+    "tablesToExcludeData": ["AbpAuditLogActions", "AbpAuditLogs"],
+    "SkipDataImport": false,
+    "SkipDataMasking": true,
+    "tables": [
+        {
+            "name": "AbpUsers",
+            "uniqueIdentifierColumn": "Id",
+            "columns": [
+                { "name": "Name", "maskingType": "name" },
+                { "name": "Surname", "maskingType": "name" },
+                { "name": "Email", "maskingType": "email" },
+                { "name": "NormalizedEmail", "maskingType": "email" },
+                { "name": "PhoneNumber", "maskingType": "mobile" }
+            ]
+        },
+        {
+            "name": "NextXContacts",
+            "uniqueIdentifierColumn": "Id",
+            "columns": [
+                { "name": "FirstName", "maskingType": "name" },
+                { "name": "LastName", "maskingType": "name" },
+                { "name": "Email", "maskingType": "email" },
+                { "name": "PhoneNumber", "maskingType": "mobile" }
+            ]
+        },
+        {
+            "name": "NextXOrders",
+            "uniqueIdentifierColumn": "Id",
+            "columns": [
+                { "name": "Email", "maskingType": "email" }
+            ]
+        },
+        {
+            "name": "NextXPortalOrders",
+            "uniqueIdentifierColumn": "Id",
+            "columns": [
+                { "name": "OrderRecipientFullName", "maskingType": "name" },
+                { "name": "PrimaryContactPersonFullName", "maskingType": "name" },
+                { "name": "PrimaryContactPersonMobileNumber", "maskingType": "mobile" },
+                { "name": "PrimaryContactPersonEmail", "maskingType": "email" },
+                { "name": "SecondaryContactPersonFullName", "maskingType": "name" },
+                { "name": "SecondaryContactPersonMobileNumber", "maskingType": "mobile" },
+                { "name": "SecondaryContactPersonEmail", "maskingType": "email" },
+                { "name": "CompanyName", "maskingType": "name" },
+                { "name": "RecipientFirstName", "maskingType": "name" },
+                { "name": "RecipientLastName", "maskingType": "name" },
+                { "name": "RecipientEmailAddress", "maskingType": "email" },
+                { "name": "RecipientMobileNumber", "maskingType": "mobile" },
+                { "name": "ShippingAddress", "maskingType": "address" },
+                { "name": "OtherShippingAddress", "maskingType": "address" }
+            ]
+        },
+        {
+            "name": "NextXQuoteRequests",
+            "uniqueIdentifierColumn": "Id",
+            "columns": [
+                { "name": "CustomerName", "maskingType": "name" },
+                { "name": "Email", "maskingType": "email" }
+            ]
+        },
+        {
+            "name": "NextXCompanies",
+            "uniqueIdentifierColumn": "Id",
+            "columns": [
+                { "name": "Name", "maskingType": "name" },
+                { "name": "PhoneNumber", "maskingType": "mobile" },
+                { "name": "Website", "maskingType": "address" },
+                { "name": "Domain", "maskingType": "address" }
+            ]
+        }
+    ]
+}

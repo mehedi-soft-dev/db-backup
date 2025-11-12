@@ -1,0 +1,15 @@
+{
+    "tablesToExcludeData": [],
+    "SkipDataImport": false,
+    "SkipDataMasking": true,
+    "tables": [
+        {
+            "name": "app_user",
+            "uniqueIdentifierColumn": "Id",
+            "columns": [
+                { "name": "Name", "maskingType": "name" },
+                { "name": "Email", "maskingType": "email" }
+            ]
+        }    
+	]
+}
